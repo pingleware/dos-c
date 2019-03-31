@@ -44,6 +44,11 @@ cleans up the director for distribution.  The makefile may have at least one
 additonal target that builds ythe component.  Study the makefile to better 
 understand this.
 
+Building under Linux
+--------------------
+
+   https://nullprogram.com/blog/2014/12/09/
+   
 
 $Header:   C:/dos-c/doc/build.txv   1.2   30 Aug 1996 21:10:00   patv  $
 
