@@ -1,0 +1,30 @@
+The following individuals have donated their time and effort into creating 
+DOS-C and associated utilities.  Their contribution is appreciated and noted 
+here as a small token of appreciation from all users of DOS-C.
+
+Pat Villani:
+kernel, sys.exe, ipl.sys, etc.
+
+Bill Lanahan & Pat Villani:
+command.com
+
+Steffen Kaiser & Pat Villani
+nls kernel functions
+
+$Header:   C:/dos-c/doc/contrib.txv   1.3   29 Aug 1996 13:06:40   patv  $
+
+$Log:   C:/dos-c/doc/contrib.txv  $
+   
+      Rev 1.3   29 Aug 1996 13:06:40   patv
+   Bug fixes for v0.91b
+   
+      Rev 1.2   19 Feb 1996  4:30:02   patv
+   Corrected typo
+   
+      Rev 1.1   19 Feb 1996  3:08:46   patv
+   Updated for v0.91
+   
+      Rev 1.0   05 Jul 1995 18:50:22   patv
+   Initial revision.
+
+

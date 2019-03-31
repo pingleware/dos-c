@@ -1,0 +1,84 @@
+DOS-C started in 1988 as an experiment in writing device drivers in C for 
+Microsoft's MS-DOS.  Both block and character device drivers were written, 
+along with special C data structures to match the MS-DOS request packet.  It 
+was then recognized that using the same techniques, an operating system 
+could be written that would take advantage of the C language features and 
+would require much less time to develop than the traditional assembly 
+language techniques.  Although UNIX had proven this earlier, it was not 
+tried with a traditional pc operating system.
+
+At this time, a minimal operating system using the device drivers written 
+earlier along with a new 8086 interrupt API was developed.  It was called 
+XDOS and proved to be a functional operating system.  This new operating 
+system was used to develop booting techniques and a C library SDK was 
+developed for it.
+
+XDOS enhancements were started in 1989 and MS-DOS was chosen as the new API.  
+A more advanced architecture was also developed.  This included the use of 
+an IPL (intermediate program loader) to set up the operating environment 
+prior to loading the operating system itself and reentrant system calls 
+facilitating real-time applications.  This version, know as NSS-DOS, was 
+completed and demonstrated in 1991.  As a result of these demonstrations, 
+NSS was approached to supply source license for this operating system by a 
+major defense contractor.  The only new requirement - it had to run on 68K 
+processors.
+
+This presented a new challenge.  Due to the MS-DOS model used for the API, 
+NSS-DOS relied heavily on a segmented architecture.  To meet this challenge, 
+a major redesign of NSS-DOS was undertaken.  New proprietary techniques were 
+developed that allowed the same source to be compiled on a variety of hosts 
+and with a wide range of compilers.  This new version, DOS/NT, was the result o
+of this new project.  The kernel was redesigned as a micro kernel along with 
+logical separation of the filesystem, memory and task managers.  A new DOS 
+API was designed along with a new DOS SDK to guarantee portability.  
+Additionally, all processor unique code was separated from the core 
+functions.  The result is  the highly portable operating system that DOS/NT 
+represents.
+
+After a number of successful commercial applications, DOS/NT became part of
+both dosemu and FreeDOS.
+
+This version, DOS-C, is the subject of an upcoming book and is intended for 
+binary redistribution, free of any royalty.  See the accompanying 
+license.txt file for details.  If you have not received this file, contact 
+me at the address below and I will send a copy to you.
+
+The DOS-C kernel is also the FreeDOS kernel.  FreeDOS is a project designed 
+to provide an alternative to MS-DOS, PC-DOS and DR-DOS that is freely 
+available.  See the FreeDOS manifesto for details.
+
+MS-DOS is a trademark of Microsoft Corporation.
+UNIX is a trademark of USL, Inc.
+
+
+Author
+------
+Pat Villani (patv@iop.com)
+
+Copyright
+---------
+(c) Copyright 1995 by Pasquale J. Villani
+All Rights Reserved.
+
+License
+-------
+See COPYING in DOS-C root directory for license.
+
+
+$Header:   C:/dos-c/doc/history.txv   1.3   29 Aug 1996 13:06:42   patv  $
+
+$Log:   C:/dos-c/doc/history.txv  $
+   
+      Rev 1.3   29 Aug 1996 13:06:42   patv
+   Bug fixes for v0.91b
+   
+      Rev 1.2   19 Feb 1996  3:08:18   patv
+   Updated for v0.91
+   
+      Rev 1.1   01 Sep 1995 17:30:42   patv
+   First GPL release
+   
+      Rev 1.0   05 Jul 1995 18:50:22   patv
+   Initial revision.
+
+

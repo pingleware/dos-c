@@ -1,0 +1,37 @@
+DOS-C to do list for v0.91b
+---------------------------
+
+1. Update the to-do list.  Any feedback?
+
+DOS-C to do list for v0.90a
+---------------------------
+
+Date: September 2, 1995
+
+
+1. Eliminate the forcing the f_node into R/W mode in dos_findnext and
+make it RO.  A directory search will never modify the entry.  Also modify
+the comments to reflect what is really going on.
+
+2. Correct the typo in the rdwr block comment (tp).  Also eliminate DOS/NT
+references in the comments.
+
+3. Add a REV_MAGIC for the "ZM" exe headre case.  Although this header has
+been encountered, it best to guarantee loading it since MS-DOS does.
+
+4. Add a CDS structure for join and subst commands.
+
+5. DosExec forces a com file to be at least sizeof exe.  Should be able to
+accept a one byte program (theoretically).
+
+6. In dosfns, should call the device open and device close driver calls if
+if the file is a device.  This allows for device initialization and orderly
+shutdown.
+
+7. If we duplicate a handle, we must make certain that a close updates the
+directory entry.
+
+8. FcbRead order of evaluating the return from dos_read must be changed.
+The zero case never executes.
+
+

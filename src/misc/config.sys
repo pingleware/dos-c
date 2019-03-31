@@ -1,0 +1,11 @@
+rem $Header:   C:/dos-c/src/misc/config.syv   1.1   29 Aug 1996 13:07:36   patv  $
+rem $Log:   C:/dos-c/src/misc/config.syv  $
+rem 
+rem    Rev 1.1   29 Aug 1996 13:07:36   patv
+rem Bug fixes for v0.91b
+rem 
+rem    Rev 1.0   19 Feb 1996  3:40:36   patv
+rem Initial revision.
+FILES=20
+BUFFERS=20
+

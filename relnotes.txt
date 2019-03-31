@@ -1,0 +1,137 @@
+Release Notes for DOS-C version 0.91b
+August 28, 1996
+
+Differences between DOS-C v0.91 and DOS-C v0.91a
+------------------------------------------------
+1. IPL now builds and loads correctly.
+
+2. This release is built with Borland C++ v3.1 and needs MS-DOS exe2bin.  
+Any deviations will require some work on your part.
+
+Differences between DOS-C v0.91 and DOS-C v0.91a
+------------------------------------------------
+1. Various changes in task handling that improved compatability.  DOS-C now 
+runs DOOM, WordPerfect, MS-DOS applications such as QBASIC, etc.
+
+2. IPL does not build (broken by kernel changes in shared files).
+
+Differences between DOS-C v0.90a and DOS-C v0.91
+------------------------------------------------
+1. Added FreeDOS OEM ID (0xfd).
+
+2. Improved stack handling.  Now DOS-C uses three stacks: private kernel
+stack, character I/O stack and block I/O stack.  Error stack is still
+missing.  Now device drivers that do DOS system calls from within the
+driver work (e.g. - Logitech mouse.com).
+
+3. Added config.sys support.  The following config options are available:
+	- BUFFERS
+	- FILES
+	- COMMAND
+	- REM
+
+4. Improved int 2fh handler.  Now int 2fh is handled identically as MS-DOS
+with the exception of int 2hf 12XX calls.
+
+5. NLS functions are now supported, but NLSFUNC.EXE support is incomplete 
+and untested.
+
+Differences between DOS-C v0.90 and DOS-C v0.90a
+------------------------------------------------
+1. Only ident strings for RCS and source placed under GPL.  All other 
+functionality is identical.
+
+Differences between DOS-C and DOS/NT
+------------------------------------
+1. DOS-C is derived from DOS/NT.
+
+2. DOS-C contains FCB support, as well as other functionality not contained 
+in DOS/NT.
+
+3. DOS-C is inteneded to work as a 100% DOS clone, although its initial 
+release (0.90) still has some functionality missing.  See intfns.txt for 
+details.
+
+Differences between release 1.03 and 1.02:
+-----------------------------------------
+1. Boot now knows about 1.2MB and 1.44MB drives.
+
+2. sys.exe error handler improved.  Now 5 retries are attempted on any disk 
+operation before it exits.
+
+3. Kernel and ipl.sys exe loader bug fixed.  Kernel appears more stable as a 
+result.
+
+4. "Production" code is now being distributed.  Symbol tables no longer in 
+all exe files and remote debugger support no longer in kernel.
+
+Differences between release 1.02 and 1.0:
+-----------------------------------------
+1. Partitions >32 MB are now supported with this release.
+
+2. Undocumented get/set switchar is now supported.
+
+3. A new utility, sys.exe, is now supplied to create bootable floppies.
+
+
+The following differences exist between DOS/NT kernel and MS-DOS:
+
+1. The following interrupts are supported:
+	20h
+	21h
+	22h
+	23h
+	24h
+	27h
+	28h
+	2fh
+
+2. Interrupts 28h and 2fh are stubs in this version.
+
+3. A separate list, int21.txt, is provided to document the supported DOS int 
+   21h functions.
+
+4. Directory updates do not occur until the final open handle to a file is 
+   closed.
+
+5. Seeks past eof on files with write permission do not extend the file.
+
+6. Reading of config.sys is disabled for this release.
+
+7. Invalid function calls cause a register dump.
+
+7. There are no drivers for aux and lpt devices in this release.
+
+8. Command line editing does not support insert and delete.
+
+10. Error Handling is done entirely within the kernel.
+
+
+The following differences exist between DOS/NT command.com and MS-DOS:
+
+1. The command cls is not supported.
+
+2. Pipes are not supported.
+
+3. The dir command does not support the sort option.
+
+4. The copy command does not support append and device drivers.
+
+
+$Header:   C:/dos-c/doc/relnotes.txv   1.3   29 Aug 1996 13:06:42   patv  $
+
+$Log:   C:/dos-c/doc/relnotes.txv  $
+   
+      Rev 1.3   29 Aug 1996 13:06:42   patv
+   Bug fixes for v0.91b
+   
+      Rev 1.2   19 Feb 1996  3:08:18   patv
+   Updated for v0.91
+   
+      Rev 1.1   01 Sep 1995 17:30:46   patv
+   First GPL release
+   
+      Rev 1.0   05 Jul 1995 18:50:22   patv
+   Initial revision.
+
+

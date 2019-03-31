@@ -1,0 +1,829 @@
+RELEASE===
+$Header$
+
+$Log$
+
+.
+NLSFUNC===
+Loads country-specific information.
+
+NLSFUNC [[drive:][path]filename]
+
+  [drive:][path]filename   Specifies the file containing country-specific
+			   information.
+Sets the version number that DOS/NT reports to a program.
+
+Display current version table:  SETVER [drive:path]
+Add entry:                      SETVER [drive:path] filename n.nn
+Delete entry:                   SETVER [drive:path] filename /DELETE [/QUIET]
+
+  [drive:path]    Specifies location of the SETVER.EXE file.
+  filename        Specifies the filename of the program.
+  n.nn            Specifies the DOS/NT version to be reported to the program.
+  /DELETE or /D   Deletes the version-table entry for the specified program.
+  /QUIET          Hides the message typically displayed during deletion of
+		  version-table entry.
+.
+DEBUG===
+Runs Debug, a program testing and editing tool.
+
+DEBUG [[drive:][path]filename [testfile-parameters]]
+
+  [drive:][path]filename  Specifies the file you want to test.
+  testfile-parameters     Specifies command-line information required by
+			  the file you want to test.
+
+After Debug starts, type ? to display a list of debugging commands.
+.
+EDLIN===
+Starts Edlin, a line-oriented text editor.
+
+EDLIN [drive:][path]filename [/B]
+
+  /B   Ignores end-of-file (CTRL+Z) characters.
+.
+EMM386===
+Turns on or off EMM386 expanded memory support.
+
+EMM386 [ON | OFF | AUTO] [W=ON | W=OFF]
+
+  ON | OFF | AUTO       Activates or suspends EMM386.EXE device driver,
+			or places it in auto mode.
+  W=ON | OFF            Turns on or off Weitek coprocessor support.
+.
+FASTOPEN===
+Decreases the amount of time needed to open frequently used files
+and directories.
+
+FASTOPEN drive:[[=]n] [drive:[[=]n][ ...]] [/X]
+
+  drive:  Specifies the hard disk drive you want Fastopen to work with.
+  n       Specifies the maximum number of file locations Fastopen retains
+	  in its filename cache.
+  /X      Creates the filename cache in expanded memory.
+.
+FDISK===
+Configures a hard disk for use with DOS/NT.
+
+FDISK
+.
+MEM===
+Displays the amount of used and free memory in your system.
+
+MEM [/PROGRAM | /DEBUG | /CLASSIFY]
+
+  /PROGRAM or /P   Displays status of programs currently loaded in memory.
+  /DEBUG or /D     Displays status of programs, internal drivers, and other
+		   information.
+  /CLASSIFY or /C  Classifies programs by memory usage. Lists the size of
+		   programs, provides a summary of memory in use, and lists
+		   largest memory block available.
+.
+SHARE===
+Installs file-sharing and locking capabilities on your hard disk.
+
+SHARE [/F:space] [/L:locks]
+
+  /F:space   Allocates file space (in bytes) for file-sharing information.
+  /L:locks   Sets the number of files that can be locked at one time.
+.
+UNDELETE===
+Restores files which have been deleted.
+
+UNDELETE [[drive:][path]][filename] [/LIST | /ALL] [/DT | /DOS]
+
+  /LIST  Lists the deleted files available to be recovered.
+  /ALL   Undeletes all specified files without prompting.
+  /DT    Uses only the deletion-tracking file.
+  /DOS   Uses only the DOS/NT directory.
+
+.
+XCOPY===
+Copies files (except hidden and system files) and directory trees.
+
+XCOPY source [destination] [/A | /M] [/D:date] [/P] [/S [/E]] [/V] [/W]
+
+  source       Specifies the file(s) to copy.
+  destination  Specifies the location and/or name of new files.
+  /A           Copies files with the archive attribute set,
+	       doesn't change the attribute.
+  /M           Copies files with the archive attribute set,
+	       turns off the archive attribute.
+  /D:date      Copies files changed on or after the specified date.
+  /P           Prompts you before creating each destination file.
+  /S           Copies directories and subdirectories except empty ones.
+  /E           Copies any subdirectories, even if empty.
+  /V           Verifies each new file.
+  /W           Prompts you to press a key before copying.
+
+Networks Software Systems (R) DOS Version 5.0  DOS/NT Shell
+Copyright (c) Networks Software Systems Inc. 1993. All rights reserved.
+.
+DOSSHELL===
+Starts DOS/NT Shell.
+
+DOSSHELL [/T[:res[n]]] [/B]
+DOSSHELL [/G[:res[n]]] [/B]
+
+  /T        Starts DOS/NT Shell in text mode.
+  :res[n]   A letter (L, M, H) and number indicating screen resolution.
+  /B        Starts DOS/NT Shell using black-and-white color scheme.
+  /G        Starts DOS/NT Shell in graphics mode.
+DOS/NT Task Swapper.
+
+This program is used internally by the DOS/NT Shell and should not be run
+from the command line.
+.
+PRINT===
+Prints a text file while you are using other DOS/NT commands.
+
+PRINT [/D:device] [/B:size] [/U:ticks1] [/M:ticks2] [/S:ticks3]
+      [/Q:qsize] [/T] [[drive:][path]filename[ ...]] [/C] [/P]
+
+  /D:device   Specifies a print device.
+  /B:size     Sets the internal buffer size, in bytes.
+  /U:ticks1   Waits the specified maximum number of clock ticks for the printer
+	      to be available.
+  /M:ticks2   Specifies the maximum number of clock ticks it takes to print a
+	      character.
+  /S:ticks3   Allocates the scheduler the specified number of clock ticks for
+	      background printing.
+  /Q:qsize    Specifies the maximum number of files allowed in the print queue.
+  /T          Removes all files from the print queue.
+  /C          Cancels printing of the preceding filename and subsequent
+	      filenames.
+  /P          Adds the preceding filename and subsequent filenames to the print
+	      queue.
+
+Type PRINT without parameters to display the contents of the print queue.
+.
+RECOVER===
+Recovers readable information from a bad or defective disk.
+
+RECOVER [drive:][path]filename
+RECOVER drive:
+
+Consult your User's Guide and Reference before using the RECOVER command.
+.
+QBASIC===
+Starts the DOS/NT QBasic programming environment.
+ 
+QBASIC [/B] [/EDITOR] [/G] [/H] [/MBF] [/NOHI] [[/RUN] [drive:][path]filename]
+ 
+  /B          Allows use of a monochrome monitor with a color graphics card.
+  /EDITOR     Starts the DOS/NT Editor.
+  /G          Provides the fastest update of a CGA screen.
+  /H          Displays the maximum number of lines possible for your hardware.
+  /MBF        Converts the built-in functions MKS$, MKD$, CVS, and CVD to
+	      MKSMBF$, MKDMBF$, CVSMBF, and CVDMBF, respectively.
+  /NOHI       Allows the use of a monitor without high-intensity support.
+  /RUN        Runs the specified Basic program before displaying it.
+  [[drive:][path]filename] Specifies the program file to load or run.
+
+.
+APPEND===
+/* FIX */
+APPEND [[drive:]path[;...]] [/X[:ON | :OFF]] [/PATH:ON | /PATH:OFF] [/E]
+APPEND ;
+
+  [drive:]path Specifies a drive and directory to append.
+  /X:ON        Applies appended directories to file searches and
+	       application execution.
+  /X:OFF       Applies appended directories only to requests to open files.
+	       /X:OFF is the default setting.
+  /PATH:ON     Applies appended directories to file requests that already
+	       specify a path.  /PATH:ON is the default setting.
+  /PATH:OFF    Turns off the effect of /PATH:ON.
+  /E           Stores a copy of the appended directory list in an environment
+	       variable named APPEND.  /E may be used only the first time
+	       you use APPEND after starting your system.
+
+Type APPEND ; to clear the appended directory list.
+Type APPEND without parameters to display the appended directory list.
+.
+ATTRIB===
+Displays or changes file attributes.
+
+ATTRIB [+R | -R] [+A | -A] [+S | -S] [+H | -H] [[drive:][path]filename] [/S]
+
+  +   Sets an attribute.
+  -   Clears an attribute.
+  R   Read-only file attribute.
+  A   Archive file attribute.
+  S   System file attribute.
+  H   Hidden file attribute.
+  /S  Processes files in all directories in the specified path.
+.
+BACKUP===
+Backs up one or more files from one disk to another.
+
+BACKUP source destination-drive: [/S] [/M] [/A] [/F[:size]]
+  [/D:date[/T:time]] [/L[:[drive:][path]logfile]]
+
+  source             Specifies the file(s), drive, or directory to back up.
+  destination-drive: Specifies the drive to save backup copies onto.
+  /S                 Backs up contents of subdirectories.
+  /M                 Backs up only files that have changed since the last
+		     backup.
+  /A                 Adds backup files to an existing backup disk.
+  /F:[size]          Specifies the size of the disk to be formatted.
+  /D:date            Backs up only files changed on or after the specified
+		     date.
+  /T:time            Backs up only files changed at or after the specified
+		     time.
+  /L[:[drive:][path]logfile]
+		     Creates a log file and entry to record the backup
+		     operation.
+.
+CHKDSK===
+Checks a disk and displays a status report.
+
+CHKDSK [drive:][[path]filename] [/F] [/V]
+
+  [drive:][path]  Specifies the drive and directory to check.
+  filename        Specifies the file(s) to check for fragmentation.
+  /F              Fixes errors on the disk.
+  /V              Displays the full path and name of every file on the disk.
+
+Type CHKDSK without parameters to check the current disk.
+.
+COMP===
+Compares the contents of two files or sets of files.
+
+COMP [data1] [data2] [/D] [/A] [/L] [/N=number] [/C]
+
+  data1     Specifies location and name(s) of first file(s) to compare.
+  data2     Specifies location and name(s) of second files to compare.
+  /D        Displays differences in decimal format. This is the default
+	    setting.
+  /A        Displays differences in ASCII characters.
+  /L        Displays line numbers for differences.
+  /N=number Compares only the first specified number of lines in each file.
+  /C        Disregards case of ASCII letters when comparing files.
+
+.
+FC===
+To compare sets of files, use wildcards in data1 and data2 parameters.
+Compares two files or sets of files and displays the differences between
+them.
+
+FC [/A] [/C] [/L] [/LBn] [/N] [/T] [/W] [/nnnn] [drive1:][path1]filename1
+  [drive2:][path2]filename2
+FC /B [drive1:][path1]filename1 [drive2:][path2]filename2
+
+  /A     Displays only first and last lines for each set of differences.
+  /B     Performs a binary comparison.
+  /C     Disregards the case of letters.
+  /L     Compares files as ASCII text.
+  /LBn   Sets the maximum consecutive mismatches to the specified number of
+	 lines.
+  /N     Displays the line numbers on an ASCII comparison.
+  /T     Does not expand tabs to spaces.
+  /W     Compresses white space (tabs and spaces) for comparison.
+  /nnnn  Specifies the number of consecutive lines that must match after a
+	 mismatch.
+.
+FIND===
+Searches for a text string in a file or files.
+
+FIND [/V] [/C] [/N] [/I] "string" [[drive:][path]filename[ ...]]
+
+  /V        Displays all lines NOT containing the specified string.
+  /C        Displays only the count of lines containing the string.
+  /N        Displays line numbers with the displayed lines.
+  /I        Ignores the case of characters when searching for the string.
+  "string"  Specifies the text string to find.
+  [drive:][path]filename
+	    Specifies a file or files to search.
+
+If a pathname is not specified, FIND searches the text typed at the prompt
+or piped from another command.
+.
+LABEL===
+Creates, changes, or deletes the volume label of a disk.
+
+LABEL [drive:][label]
+.
+RESTORE===
+Restores files that were backed up by using the BACKUP command.
+
+RESTORE drive1: drive2:[path[filename]] [/S] [/P] [/B:date] [/A:date] [/E:time]
+  [/L:time] [/M] [/N] [/D]
+
+  drive1:  Specifies the drive on which the backup files are stored.
+  drive2:[path[filename]]
+	   Specifies the file(s) to restore.
+  /S       Restores files in all subdirectories in the path.
+  /P       Prompts before restoring read-only files or files changed since
+	   the last backup (if appropriate attributes are set).
+  /B       Restores only files last changed on or before the specified date.
+  /A       Restores only files changed on or after the specified date.
+  /E       Restores only files last changed at or earlier than the specified
+	   time.
+  /L       Restores only files changed at or later than the specified time.
+  /M       Restores only files changed since the last backup.
+  /N       Restores only files that no longer exist on the destination disk.
+  /D       Displays files on the backup disk that match specifications.
+.
+SORT===
+Sorts input and writes results to the screen, a file, or another device.
+
+SORT [/R] [/+n] < [drive1:][path1]filename1 [> [drive2:][path2]filename2]
+[command |] SORT [/R] [/+n] [> [drive2:][path2]filename2]
+
+  /R                         Reverses the sort order; that is, sorts Z to A,
+			     then 9 to 0.
+  /+n                        Sorts the file according to characters in
+			     column n.
+  [drive1:][path1]filename1  Specifies a file to be sorted.
+  [drive2:][path2]filename2  Specifies a file where the sorted input is to be 
+			     stored.
+  command                    Specifies a command whose output is to be sorted.
+.
+JOIN===
+Joins a disk drive to a directory on another drive.
+
+JOIN [drive1: [drive2:]path]
+JOIN drive1: /D
+
+  drive1:        Specifies a disk drive that will appear as a directory on
+		 drive2.
+  drive2:        Specifies a drive to which you want to join drive1.
+  path           Specifies the directory to which you want to join drive1. It
+		 must be empty and cannot be the root directory.
+  /D             Cancels any previous JOIN commands for the specified drive.
+
+Type JOIN without parameters to list currently joined drives.
+.
+EXE2BIN===
+Converts .EXE (executable) files to binary format.
+
+EXE2BIN [drive1:][path1]input-file [[drive2:][path2]output-file]
+
+  input-file   Specifies the .EXE file to be converted.
+  output-file  Specifies the binary file to be created.
+.
+REPLACE===
+Replaces files.
+
+REPLACE [drive1:][path1]filename [drive2:][path2] [/A] [/P] [/R] [/W]
+REPLACE [drive1:][path1]filename [drive2:][path2] [/P] [/R] [/S] [/W] [/U]
+
+  [drive1:][path1]filename Specifies the source file or files.
+  [drive2:][path2]         Specifies the directory where files are to be
+			   replaced.
+  /A                       Adds new files to destination directory. Cannot
+			   use with /S or /U switches.
+  /P                       Prompts for confirmation before replacing a file or
+			   adding a source file.
+  /R                       Replaces read-only files as well as unprotected
+			   files.
+  /S                       Replaces files in all subdirectories of the
+			   destination directory. Cannot use with the /A
+			   switch.
+  /W                       Waits for you to insert a disk before beginning.
+  /U                       Replaces (updates) only files that are older than
+			   source files. Cannot use with the /A switch.
+.
+SUBST===
+Associates a path with a drive letter.
+
+SUBST [drive1: [drive2:]path]
+SUBST drive1: /D
+
+  drive1:        Specifies a virtual drive to which you want to assign a path.
+  [drive:2]path  Specifies a physical drive and path you want to assign to
+		 a virtual drive.
+  /D             Deletes a substituted (virtual) drive.
+
+Type SUBST with no parameters to display a list of current virtual drives.
+.
+EXPAND===
+Expands one or more compressed files.
+
+EXPAND [drive:][path]filename [[drive1:][path1]filename[ ...]] destination
+
+  [drive:][path]filename  Specifies the location and/or name of a file or
+			  set of files to be expanded. You cannot use
+			  wildcards.
+  destination             Specifies the new location and/or name of an
+			  expanded file or set of files. Destination can be
+			  a drive letter and colon, directory name,
+			  filename, or combination.
+
+The destination can only be a filename if you have specified a single
+filename for the source filename parameter. To expand multiple files to a
+different directory and keep the original filenames, specify only a
+directory as the destination.
+
+.
+DELOLDOS===
+Deletes old DOS files after DOS/NT 5.0 installation.
+
+DELOLDOS [/B]
+
+  /B  Uses black-and-white instead of color screen display.
+
+After running the DELOLDOS command, you cannot use the 'UNINSTALL' disk
+(created by DOS/NT 5.0 Setup) to restore your previous DOS version.
+.
+BREAK===
+Sets or clears extended CTRL+C checking.
+
+BREAK [ON | OFF]
+
+Type BREAK without a parameter to display the current BREAK setting.
+.
+CD===
+Displays the name of or changes the current directory.
+
+CHDIR [drive:][path]
+CHDIR[..]
+CD [drive:][path]
+CD[..]
+
+  ..   Specifies that you want to change to the parent directory.
+
+Type CD drive: to display the current directory in the specified drive.
+Type CD without parameters to display the current drive and directory.
+.
+CHDIR===
+Displays the name of or changes the current directory.
+
+CHDIR [drive:][path]
+CHDIR[..]
+CD [drive:][path]
+CD[..]
+
+  ..   Specifies that you want to change to the parent directory.
+
+Type CD drive: to display the current directory in the specified drive.
+Type CD without parameters to display the current drive and directory.
+.
+CHCP===
+Displays or sets the active code page number.
+
+CHCP [nnn]
+
+  nnn   Specifies a code page number.
+
+Type CHCP without a parameter to display the active code page number.
+.
+CLS===
+Clears the screen.
+
+CLS
+.
+COPY===
+Copies one or more files to another location.
+
+COPY [/A | /B] source [/A | /B] [+ source [/A | /B] [+ ...]] [destination
+  [/A | /B]] [/V]
+
+  source       Specifies the file or files to be copied.
+  /A           Indicates an ASCII text file.
+  /B           Indicates a binary file.
+  destination  Specifies the directory and/or filename for the new file(s).
+  /V           Verifies that new files are written correctly.
+
+To append files, specify a single file for destination, but multiple files
+for source (using wildcards or file1+file2+file3 format).
+.
+CTTY===
+Changes the terminal device used to control your system.
+
+CTTY device
+
+  device   The terminal device you want to use, such as COM1.
+.
+DATE===
+Displays or sets the date.
+
+DATE [date]
+
+Type DATE without parameters to display the current date setting and
+a prompt for a new one.  Press ENTER to keep the same date.
+.
+DEL===
+Deletes one or more files.
+
+DEL [drive:][path]filename [/P]
+ERASE [drive:][path]filename [/P]
+
+  [drive:][path]filename  Specifies the file(s) to delete.  Specify multiple
+			  files by using wildcards.
+  /P                      Prompts for confirmation before deleting each file.
+.
+ERASE===
+Deletes one or more files.
+
+DEL [drive:][path]filename [/P]
+ERASE [drive:][path]filename [/P]
+
+  [drive:][path]filename  Specifies the file(s) to delete.  Specify multiple
+			  files by using wildcards.
+  /P                      Prompts for confirmation before deleting each file.
+.
+DIR===
+Displays a list of files and subdirectories in a directory.
+
+DIR [drive:][path][filename] [/P] [/W] [/A[[:]attributes]]
+  [/O[[:]sortorder]] [/S] [/B] [/L]
+
+  [drive:][path][filename]
+	      Specifies drive, directory, and/or files to list.
+  /P          Pauses after each screenful of information.
+  /W          Uses wide list format.
+  /A          Displays files with specified attributes.
+  attributes   D  Directories                R  Read-only files
+	       H  Hidden files               A  Files ready for archiving
+	       S  System files               -  Prefix meaning "not"
+  /O          List by files in sorted order.
+  sortorder    N  By name (alphabetic)       S  By size (smallest first)
+	       E  By extension (alphabetic)  D  By date & time (earliest first)
+	       G  Group directories first    -  Prefix to reverse order
+  /S          Displays files in specified directory and all subdirectories.
+  /B          Uses bare format (no heading information or summary).
+  /L          Uses lowercase.
+
+Switches may be preset in the DIRCMD environment variable.  Override
+preset switches by prefixing any switch with - (hyphen)--for example, /-W.
+.
+EXIT===
+Quits the COMMAND.COM program (command interpreter).
+
+EXIT
+.
+HELP===
+Provides help information for DOS/NT commands.
+
+HELP [command]
+
+  command - displays help information on that command.
+.
+LOADHIGH===
+Loads a program into the upper memory area.
+
+LOADHIGH [drive:][path]filename [parameters]
+LH [drive:][path]filename [parameters]
+
+  parameters   Specifies any command-line information required by the
+	       program you want to load.
+.
+LH===
+Loads a program into the upper memory area.
+
+LOADHIGH [drive:][path]filename [parameters]
+LH [drive:][path]filename [parameters]
+
+  parameters   Specifies any command-line information required by the
+	       program you want to load.
+.
+MKDIR===
+Creates a directory.
+
+MKDIR [drive:]path
+MD [drive:]path
+.
+MD===
+Creates a directory.
+
+MKDIR [drive:]path
+MD [drive:]path
+.
+PATH===
+Displays or sets a search path for executable files.
+
+PATH [[drive:]path[;...]]
+PATH ;
+
+Type PATH ; to clear all search-path settings and direct DOS/NT to search
+only in the current directory.
+Type PATH without parameters to display the current path.
+Changes the DOS/NT command prompt.
+.
+PROMPT===
+
+PROMPT [text]
+
+  text    Specifies a new command prompt.
+
+Prompt can be made up of normal characters and the following special codes:
+
+  $Q   = (equal sign)
+  $$   $ (dollar sign)
+  $T   Current time
+  $D   Current date
+  $P   Current drive and path
+  $V   DOS/NT version number
+  $N   Current drive
+  $G   > (greater-than sign)
+  $L   < (less-than sign)
+  $B   | (pipe)
+  $H   Backspace (erases previous character)
+  $E   Escape code (ASCII code 27)
+  $_   Carriage return and linefeed
+
+Type PROMPT without parameters to reset the prompt to the default setting.
+.
+RD===
+Removes (deletes) a directory.
+
+RMDIR [drive:]path
+RD [drive:]path
+.
+RMDIR===
+Removes (deletes) a directory.
+
+RMDIR [drive:]path
+RD [drive:]path
+.
+REN===
+Renames a file or files.
+
+RENAME [drive:][path]filename1 filename2
+REN [drive:][path]filename1 filename2
+
+Note that you cannot specify a new drive or path for your destination file.
+.
+RENAME===
+Renames a file or files.
+
+RENAME [drive:][path]filename1 filename2
+REN [drive:][path]filename1 filename2
+
+Note that you cannot specify a new drive or path for your destination file.
+.
+SET===
+Displays, sets, or removes DOS/NT environment variables.
+
+SET [variable=[string]]
+
+  variable  Specifies the environment-variable name.
+  string    Specifies a series of characters to assign to the variable.
+
+Type SET without parameters to display the current environment variables.
+.
+TIME===
+Displays or sets the system time.
+
+TIME [time]
+
+Type TIME with no parameters to display the current time setting and a prompt
+for a new one.  Press ENTER to keep the same time.
+.
+VER===
+Displays the DOS/NT version.
+
+VER
+.
+VERIFY===
+Tells DOS/NT whether to verify that your files are written correctly to a
+disk.
+
+VERIFY [ON | OFF]
+
+Type VERIFY without a parameter to display the current VERIFY setting.
+.
+VOL===
+Displays the disk volume label and serial number, if they exist.
+
+VOL [drive:]
+.
+TYPE===
+Displays the contents of a text file.
+
+TYPE [drive:][path]filename
+.
+UNFORMAT===
+Restores a disk erased by the FORMAT command or restructured by the RECOVER
+command.
+
+UNFORMAT drive: [/J]
+UNFORMAT drive: [/U] [/L] [/TEST] [/P]
+UNFORMAT /PARTN [/L]
+
+  drive:   Specifies the drive to unformat.
+  /J       Verifies that the mirror files agree with the system information
+	   on the disk.
+  /U       Unformats without using MIRROR files.
+  /L       Lists all file and directory names found, or, when used with the
+	   /PARTN switch, displays current partition tables.
+  /TEST    Displays information but does not write changes to disk.
+  /P       Sends output messages to printer connected to LPT1.
+  /PARTN   Restores disk partition tables.
+
+.
+MORE===
+MORE < file
+cmd | MORE
+pg, more -- interactively view files on a screen
+Usage:  pg [-n] [-p prompt] [-acefnst] [+n] [+/pattern/] [file ...]
+	more [-n] [-p prompt] [-acefnst] [+n] [+/pattern/] [file ...]
+-n      Set display window size to `n' lines (default: screen size - 1)
+-p      set command prompt to `prompt' (default: pg=':', more='--More--')
+-a      force ANSI mode
+-c      clear screen before each screenful printed
+-e      no interaction at end of file
+-f      no folding of lines to screen width
+-n      no new-line required to terminate interactive commands (default in more)
+-s      interactive prompts and messages in standout mode (default in more)
+-t      do not buffer streams into temporary files--no backward reading
++n      start at line numbered `n'
++/pattern/      start at line containing regular expression 'pattern'
+
+Type `h' to interactive prompt (between pages) for summary of commands.
+.
+
+APPEND   Allows programs to open data files in specified directories as if 
+	 they were in the current directory.
+ASSIGN   Redirects requests for disk operations on one drive to a different 
+	 drive.
+ATTRIB   Displays or changes file attributes.
+BACKUP   Backs up one or more files from one disk to another.
+BREAK    Sets or clears extended CTRL+C checking.
+CALL     Calls one batch program from another.
+CD       Displays the name of or changes the current directory.
+CHCP     Displays or sets the active code page number.
+CHDIR    Displays the name of or changes the current directory.
+CHKDSK   Checks a disk and displays a status report.
+CLS      Clears the screen.
+COMMAND  Starts a new instance of the DOS/NT command interpreter.
+COMP     Compares the contents of two files or sets of files.
+COPY     Copies one or more files to another location.
+CTTY     Changes the terminal device used to control your system.
+DATE     Displays or sets the date.
+DEBUG    Runs Debug, a program testing and editing tool.
+DEL      Deletes one or more files.
+DIR      Displays a list of files and subdirectories in a directory.
+DISKCOMP Compares the contents of two floppy disks.
+DISKCOPY Copies the contents of one floppy disk to another.
+DOSKEY   Edits command lines, recalls DOS/NT commands, and creates macros.
+DOSSHELL Starts DOS/NT Shell.
+ECHO     Displays messages, or turns command echoing on or off.
+EDIT     Starts DOS/NT Editor, which creates and changes ASCII files.
+EDLIN    Starts Edlin, a line-oriented text editor.
+EMM386   Turns on or off EMM386 expanded memory support.
+ERASE    Deletes one or more files.
+EXE2BIN  Converts .EXE (executable) files to binary format.
+EXIT     Quits the COMMAND.COM program (command interpreter).
+EXPAND   Expands one or more compressed files.
+FASTOPEN Decreases the amount of time needed to open frequently used files 
+	 and directories.
+FC       Compares two files or sets of files, and displays the differences 
+	 between them.
+FDISK    Configures a hard disk for use with DOS/NT.
+FIND     Searches for a text string in a file or files.
+FOR      Runs a specified command for each file in a set of files.
+FORMAT   Formats a disk for use with DOS/NT.
+GOTO     Directs DOS/NT to a labelled line in a batch program.
+GRAFTABL Enables DOS/NT to display an extended character set in graphics mode.
+GRAPHICS Loads a program that can print graphics.
+HELP     Provides Help information for DOS/NT commands.
+IF       Performs conditional processing in batch programs.
+JOIN     Joins a disk drive to a directory on another drive.
+KEYB     Configures a keyboard for a specific language.
+LABEL    Creates, changes, or deletes the volume label of a disk.
+LH       Loads a program into the upper memory area.
+LOADFIX  Loads a program above the first 64K of memory, and runs the program.
+LOADHIGH Loads a program into the upper memory area.
+MD       Creates a directory.
+MEM      Displays the amount of used and free memory in your system.
+MIRROR   Records information about one or more disks.
+MKDIR    Creates a directory.
+MODE     Configures a system device.
+MORE     Displays output one screen at a time.
+NLSFUNC  Loads country-specific information.
+PATH     Displays or sets a search path for executable files.
+PAUSE    Suspends processing of a batch file and displays a message.
+PRINT    Prints a text file while you are using other DOS/NT commands.
+PROMPT   Changes the DOS/NT command prompt.
+QBASIC   Starts the DOS/NT QBasic programming environment.
+RD       Removes a directory.
+RECOVER  Recovers readable information from a bad or defective disk.
+REM      Records comments (remarks) in batch files or CONFIG.SYS.
+REN      Renames a file or files.
+RENAME   Renames a file or files.
+REPLACE  Replaces files.
+RESTORE  Restores files that were backed up by using the BACKUP command.
+RMDIR    Removes a directory.
+SET      Displays, sets, or removes DOS/NT environment variables.
+SETVER   Sets the version number that DOS/NT reports to a program.
+SHARE    Installs file-sharing and locking capabilities on your hard disk.
+SHIFT    Shifts the position of replaceable parameters in batch files.
+SORT     Sorts input.
+SUBST    Associates a path with a drive letter.
+SYS      Copies DOS/NT system files and command interpreter to a disk you 
+	 specify.
+TIME     Displays or sets the system time.
+TREE     Graphically displays the directory structure of a drive or path.
+TYPE     Displays the contents of a text file.
+UNDELETE Recovers files which have been deleted.
+UNFORMAT Restores a disk erased by the FORMAT command or restructured by the 
+	 RECOVER command.
+VER      Displays the DOS/NT version.
+VERIFY   Tells DOS/NT whether to verify that your files are written correctly 
+	 to a disk.
+VOL      Displays a disk volume label and serial number.
+XCOPY    Copies files (except hidden and system files) and directory trees.
+

@@ -1,0 +1,279 @@
+RELEASE===
+$Header$
+
+$Log$
+   Version 1.0
+.
+BREAK===
+Sets or clears extended CTRL+C checking.
+
+BREAK [ON | OFF]
+
+Type BREAK without a parameter to display the current BREAK setting.
+.
+CD===
+Displays the name of or changes the current directory.
+
+CHDIR [drive:][path]
+CHDIR[..]
+CD [drive:][path]
+CD[..]
+
+  ..   Specifies that you want to change to the parent directory.
+
+Type CD drive: to display the current directory in the specified drive.
+Type CD without parameters to display the current drive and directory.
+.
+CHDIR===
+Displays the name of or changes the current directory.
+
+CHDIR [drive:][path]
+CHDIR[..]
+CD [drive:][path]
+CD[..]
+
+  ..   Specifies that you want to change to the parent directory.
+
+Type CD drive: to display the current directory in the specified drive.
+Type CD without parameters to display the current drive and directory.
+.
+COPY===
+Copies one or more files to another location.
+
+COPY source destination
+
+  source       Specifies the file or files to be copied.
+  destination  Specifies the directory and/or filename for the new file(s).
+
+To append files, specify a single file for destination, but multiple files
+for source (using wildcards).
+.
+DATE===
+Displays or sets the date.
+
+DATE [date]
+
+Type DATE without parameters to display the current date setting and
+a prompt for a new one.  Press ENTER to keep the same date.
+.
+DEL===
+Deletes one or more files.
+
+DEL [drive:][path]filename [/P]
+ERASE [drive:][path]filename [/P]
+
+  [drive:][path]filename  Specifies the file(s) to delete.  Specify multiple
+			  files by using wildcards.
+  /P                      Prompts for confirmation before deleting each file.
+.
+ERASE===
+Deletes one or more files.
+
+DEL [drive:][path]filename [/P]
+ERASE [drive:][path]filename [/P]
+
+  [drive:][path]filename  Specifies the file(s) to delete.  Specify multiple
+			  files by using wildcards.
+  /P                      Prompts for confirmation before deleting each file.
+.
+DIR===
+Displays a list of files and subdirectories in a directory.
+
+DIR [drive:][path][filename] [/P] [/W] [/A[[:]attributes]] [/S] [/B] [/L]
+
+  [drive:][path][filename]
+	      Specifies drive, directory, and/or files to list.
+  /P          Pauses after each screenful of information.
+  /W          Uses wide list format.
+  /A          Displays files with specified attributes.
+  attributes   D  Directories                R  Read-only files
+	       H  Hidden files               A  Files ready for archiving
+	       S  System files               -  Prefix meaning "not"
+  /S          Displays files in specified directory and all subdirectories.
+  /B          Uses bare format (no heading information or summary).
+  /L          Uses lowercase.
+
+Switches may be preset in the DIRCMD environment variable.  Override
+preset switches by prefixing any switch with - (hyphen)--for example, /-W.
+.
+EXIT===
+Quits the COMMAND.COM program (command interpreter).
+
+EXIT
+.
+HELP===
+Provides help information for DOS-C commands.
+
+HELP [command]
+
+  command - displays help information on that command.
+.
+MKDIR===
+Creates a directory.
+
+MKDIR [drive:]path
+MD [drive:]path
+.
+MD===
+Creates a directory.
+
+MKDIR [drive:]path
+MD [drive:]path
+.
+PATH===
+Displays or sets a search path for executable files.
+
+PATH [[drive:]path[;...]]
+PATH ;
+
+Type PATH ; to clear all search-path settings and direct DOS-C to search
+only in the current directory.
+Type PATH without parameters to display the current path.
+Changes the DOS-C command prompt.
+.
+PROMPT===
+
+PROMPT [text]
+
+  text    Specifies a new command prompt.
+
+Prompt can be made up of normal characters and the following special codes:
+
+  $Q   = (equal sign)
+  $$   $ (dollar sign)
+  $T   Current time
+  $D   Current date
+  $P   Current drive and path
+  $V   DOS-C version number
+  $N   Current drive
+  $G   > (greater-than sign)
+  $L   < (less-than sign)
+  $B   | (pipe)
+  $H   Backspace (erases previous character)
+  $E   Escape code (ASCII code 27)
+  $_   Carriage return and linefeed
+
+Type PROMPT without parameters to reset the prompt to the default setting.
+.
+RD===
+Removes (deletes) a directory.
+
+RMDIR [drive:]path
+RD [drive:]path
+.
+RMDIR===
+Removes (deletes) a directory.
+
+RMDIR [drive:]path
+RD [drive:]path
+.
+REN===
+Renames a file or files.
+
+RENAME [drive:][path]filename1 filename2
+REN [drive:][path]filename1 filename2
+
+Note that you cannot specify a new drive or path for your destination file.
+.
+RENAME===
+Renames a file or files.
+
+RENAME [drive:][path]filename1 filename2
+REN [drive:][path]filename1 filename2
+
+Note that you cannot specify a new drive or path for your destination file.
+.
+SET===
+Displays, sets, or removes DOS-C environment variables.
+
+SET [variable=[string]]
+
+  variable  Specifies the environment-variable name.
+  string    Specifies a series of characters to assign to the variable.
+
+Type SET without parameters to display the current environment variables.
+.
+TIME===
+Displays or sets the system time.
+
+TIME [time]
+
+Type TIME with no parameters to display the current time setting and a prompt
+for a new one.  Press ENTER to keep the same time.
+.
+VER===
+Displays the DOS-C version.
+
+VER
+.
+VERIFY===
+Tells DOS-C whether to verify that your files are written correctly to a
+disk.
+
+VERIFY [ON | OFF]
+
+Type VERIFY without a parameter to display the current VERIFY setting.
+.
+TYPE===
+Displays the contents of a text file.
+
+TYPE [drive:][path]filename
+.
+MORE===
+MORE < file
+cmd | MORE
+pg, more -- interactively view files on a screen
+Usage:  pg [-n] [-p prompt] [-acefnst] [+n] [+/pattern/] [file ...]
+	more [-n] [-p prompt] [-acefnst] [+n] [+/pattern/] [file ...]
+-n      Set display window size to `n' lines (default: screen size - 1)
+-p      set command prompt to `prompt' (default: pg=':', more='--More--')
+-a      force ANSI mode
+-c      clear screen before each screenful printed
+-e      no interaction at end of file
+-f      no folding of lines to screen width
+-n      no new-line required to terminate interactive commands (default in more)
+-s      interactive prompts and messages in standout mode (default in more)
+-t      do not buffer streams into temporary files--no backward reading
++n      start at line numbered `n'
++/pattern/      start at line containing regular expression 'pattern'
+
+Type `h' to interactive prompt (between pages) for summary of commands.
+.
+
+BREAK    Sets or clears extended CTRL+C checking.
+CALL     Calls one batch program from another.
+CD       Displays the name of or changes the current directory.
+CHCP     Displays or sets the active code page number.
+CHDIR    Displays the name of or changes the current directory.
+COMMAND  Starts a new instance of the DOS-C command interpreter.
+COPY     Copies one or more files to another location.
+DATE     Displays or sets the date.
+DEL      Deletes one or more files.
+DIR      Displays a list of files and subdirectories in a directory.
+ECHO     Displays messages, or turns command echoing on or off.
+ERASE    Deletes one or more files.
+EXIT     Quits the COMMAND.COM program (command interpreter).
+FOR      Runs a specified command for each file in a set of files.
+GOTO     Directs DOS-C to a labelled line in a batch program.
+HELP     Provides Help information for DOS-C commands.
+IF       Performs conditional processing in batch programs.
+LABEL    Creates, changes, or deletes the volume label of a disk.
+MD       Creates a directory.
+MKDIR    Creates a directory.
+MORE     Displays output one screen at a time.
+PATH     Displays or sets a search path for executable files.
+PAUSE    Suspends processing of a batch file and displays a message.
+PROMPT   Changes the DOS-C command prompt.
+RD       Removes a directory.
+REM      Records comments (remarks) in batch files or CONFIG.SYS.
+REN      Renames a file or files.
+RENAME   Renames a file or files.
+RMDIR    Removes a directory.
+SET      Displays, sets, or removes DOS-C environment variables.
+SHIFT    Shifts the position of replaceable parameters in batch files.
+TIME     Displays or sets the system time.
+TYPE     Displays the contents of a text file.
+VER      Displays the DOS-C version.
+VERIFY   Tells DOS-C whether to verify that your files are written correctly 
+	 to a disk.
+

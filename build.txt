@@ -1,0 +1,61 @@
+To build the operating system, a batch file (BUILD.BAT) is included to make 
+life easier.  This file is in the dos-c directory of the distribution.  In
+addition, there is a corresponding batch file (CLEAN.BAT) to clean up the 
+source directories.
+
+If you feel hardy, read on to understand the directory structure.  A more
+complete description of the build environment is contained ina companion 
+book, "The FreeDOS Kernel" (ISBN: 0-87930-436-7) published by R&D Books, an 
+imprint of Miller Freeman of Lawrence, Kansas (USA) and distributed in the 
+USA and Canada by Publishers Group West.  See the file README.TXT for more 
+details.
+
+
+Directory Structure
+-------------------
+
+dos-c				root directory
+  +-----dist			holds image of distribution disk
+  +-----doc			documentation directory
+  +-----hdr			common *.h files
+  +-----lib			LIBM.LIB and DEVICE.LIB
+  +-----src			source directories for:
+  +--------+-----boot		boot.bin
+  +--------+-----command	COMMAND.COM and HELP.EXE
+  +--------+-----drivers	DEVICE.LIB
+  +--------+-----fs		common kernel and ipl fs manage files
+  +--------+-----ipl		IPL.SYS
+  +--------+-----kernel		KERNEL.EXE
+  +--------+-----misc		miscellaneous files for kernel and ipl
+  +--------+-----tmp
+  +--------+-----utils		SYS.EXE
+
+
+Organization in a nutshell
+--------------------------
+Each component or group of utilities is segreagated into its own directory.  
+Whenever common files are needed, they are removed and placed into a 
+seperate directory.  In order to build that component or utility, a makefile 
+exists in the directory that bears the component's or utility's basename.
+
+Each makefile has at least two targets, production and clean.  The target 
+production builds the expected component or utility and the component clean 
+cleans up the director for distribution.  The makefile may have at least one 
+additonal target that builds ythe component.  Study the makefile to better 
+understand this.
+
+
+$Header:   C:/dos-c/doc/build.txv   1.2   30 Aug 1996 21:10:00   patv  $
+
+$Log:   C:/dos-c/doc/build.txv  $
+   
+      Rev 1.2   30 Aug 1996 21:10:00   patv
+   Added information regarding detailed directory structure description.
+   
+      Rev 1.1   29 Aug 1996 13:06:40   patv
+   Bug fixes for v0.91b
+   
+      Rev 1.0   05 Jul 1995 18:50:22   patv
+   Initial revision.
+
+

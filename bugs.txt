@@ -1,0 +1,27 @@
+Known bugs with DOS-C release 0.91
+----------------------------------
+1. Due my misunderstanding the functionality of the exe loader when the exe 
+file is to be loaded high, it is incorrectly handled.  This may cause DOS-C 
+to crash.  This will be corrected in the next release.
+
+2. Drive D is a mess.  The driver does not correctly handle the partition 
+table resulting in file system corruption.  **DO NOT USE DRIVE D**.  This 
+will be corrected in the next release.
+
+3. The disk device driver expects a drive C to be present.  This will be 
+corrected in the next release.
+
+$Header:   C:/dos-c/doc/bugs.txv   1.2   29 Aug 1996 13:06:40   patv  $
+
+$Log:   C:/dos-c/doc/bugs.txv  $
+   
+      Rev 1.2   29 Aug 1996 13:06:40   patv
+   Bug fixes for v0.91b
+   
+      Rev 1.1   19 Feb 1996  3:08:46   patv
+   Updated for v0.91
+   
+      Rev 1.0   05 Jul 1995 18:50:22   patv
+   Initial revision.
+
+
